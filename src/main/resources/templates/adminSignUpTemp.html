@@ -1,0 +1,21 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Congratulations</title>
+</head>
+<body>
+	<h3>
+		<b>Congratulations</b>, you have been selected for the new role as an admin to our portal
+	</h3>
+	<h4>Below are your information and credentials for you to login to
+		the portal</h4>
+	<p th:text="${'Email Id :'+ emailId}"></p>
+	<p th:text="${'Admin Id :'+ adminId}"></p>
+	<p th:text="${'Password :'+ password}"></p>
+	<p th:text="${'State :'+ state}"></p>
+	<h5>Regards E-Mandi</h5>
+	</body>
+</html>

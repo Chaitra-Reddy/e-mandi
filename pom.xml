@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.3</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>EMandi</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>EMandi</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<java.version>1.8</java.version>
+		<sonar.host.url>http://glcdevops.southindia.cloudapp.azure.com:51002/sonar</sonar.host.url>
+		<sonar.exclusions>
+			src/main/java/com/mindtree/EMandi/exception/*.java,
+            src/main/javacom/mindtree/EMandi/exception/service/*.java,
+            src/main/java/com/mindtree/EMandi/modules/admin/converter/*.java,
+            src/main/java/com/mindtree/EMandi/modules/admin/dto/*.java,
+            src/main/java/com/mindtree/EMandi/modules/admin/entity/*.java,
+            src/main/java/com/mindtree/EMandi/modules/buyer/converter/*.java,
+            src/main/java/com/mindtree/EMandi/modules/buyer/dto/*.java,
+            src/main/java/com/mindtree/EMandi/modules/buyer/entity/*.java,
+            src/main/java/com/mindtree/EMandi/modules/clerk/converter/*.java,
+            src/main/java/com/mindtree/EMandi/modules/clerk/dto/*.java,
+            src/main/java/com/mindtree/EMandi/modules/clerk/entity/*.java,
+            src/main/java/com/mindtree/EMandi/modules/crop/converter/*.java,
+            src/main/java/com/mindtree/EMandi/modules/crop/dto/*.java,
+            src/main/java/com/mindtree/EMandi/modules/crop/entity/*.java,
+            src/main/java/com/mindtree/EMandi/modules/farmer/converter/*.java,
+            src/main/java/com/mindtree/EMandi/modules/farmer/dto/*.java,
+            src/main/java/com/mindtree/EMandi/modules/farmer/entity/*.java,
+            src/main/java/com/mindtree/EMandi/modules/mandi/converter/*.java,
+            src/main/java/com/mindtree/EMandi/modules/mandi/dto/*.java,
+            src/main/java/com/mindtree/EMandi/modules/mandi/entity/*.java,
+            src/main/java/com/mindtree/EMandi/modules/superadmin/converter/*.java,
+            src/main/java/com/mindtree/EMandi/modules/superadmin/dto/*.java,
+            src/main/java/com/mindtree/EMandi/modules/superadmin/entity/*.java
+		</sonar.exclusions>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>2.3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.thymeleaf</groupId>
+			<artifactId>thymeleaf-spring5</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.thymeleaf</groupId>
+			<artifactId>thymeleaf</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+				<dependency>
+
+			<groupId>io.springfox</groupId>
+
+			<artifactId>springfox-swagger2</artifactId>
+
+			<version>2.6.1</version>
+
+			<scope>compile</scope>
+
+		</dependency>
+
+
+
+		<dependency>
+
+			<groupId>io.springfox</groupId>
+
+			<artifactId>springfox-swagger-ui</artifactId>
+
+			<version>2.6.1</version>
+
+			<scope>compile</scope>
+			</dependency>
+	</dependencies>
+
+	<build>
+
+		<finalName>ROOT</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.6</version>
+
+				<configuration>
+					<excludes>
+						<!-- <exclude>**/dto/**</exclude> <exclude>**/entity/**</exclude> -->
+						<exclude>src/main/java/com/mindtree/EMandi/exception/*.java</exclude>
+						<exclude>src/main/javacom/mindtree/EMandi/exception/service/*.java</exclude>
+						<exclude>**/utility/**</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/admin/converter/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/admin/dto/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/admin/entity/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/buyer/converter/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/buyer/dto/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/buyer/entity/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/clerk/converter/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/clerk/dto/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/clerk/entity/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/crop/converter/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/crop/dto/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/crop/entity/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/farmer/converter/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/farmer/dto/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/farmer/entity/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/mandi/converter/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/mandi/dto/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/mandi/entity/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/superadmin/converter/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/superadmin/dto/*.java</exclude>
+						<exclude>src/main/java/com/mindtree/EMandi/modules/superadmin/entity/*.java</exclude>
+					</excludes>
+				</configuration>
+
+
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
